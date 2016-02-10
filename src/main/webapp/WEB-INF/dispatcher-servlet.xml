@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+	default-lazy-init="true">
+
+	<context:annotation-config />
+
+	<!-- support JSR303 annotation if JSR 303 validation present on classpath -->
+	<mvc:annotation-driven />
+
+	<context:component-scan base-package="com.viktarkarahoda.phonebook.*" />
+
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/**" location="/" />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<bean id="props" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="location" value="classpath:phonebook.properties" />
+	</bean>
+
+	<!-- DB connection configuration -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass">
+			<value>${driver}</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>${connection}</value>
+		</property>
+		<property name="user">
+			<value>${user}</value>
+		</property>
+		<property name="password">
+			<value>${pwd}</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>${maxpoolsize}</value>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" scope="singleton">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
+	<tx:annotation-driven />
+
+	<!-- excludes all resources like images, js and css from url mapping and view resolving -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+</beans>

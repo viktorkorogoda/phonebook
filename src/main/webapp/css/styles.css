@@ -1,0 +1,246 @@
+.mainArea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: lavender;
+	box-shadow: 0 1px 20px 5px rgba(0, 0, 0, 0.75);
+	border-width: 0PX;
+	border-style: solid;
+	border-color: lavender;
+	padding: 0PX 0PX 0PX 0PX;
+	background-image: none;
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	padding-bottom: 50px;
+}
+
+.star {
+	color: red;
+}
+
+.menu-container {
+	position: relative;
+	margin: 0PX 0PX 0PX 0PX;
+	padding: 0PX 0PX 0PX 0PX;
+	z-index: 10;
+	height: 47px;
+	overflow: visible;
+	background-color: dodgerblue;
+	border-style: solid;
+	border-width: 0PX;
+	border-color: lavender;
+	border: none;
+	overflow: visible;
+}
+
+ul {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	display: block;
+	list-style-type: disc;
+}
+
+div.menu {
+	position: relative;
+	display: table;
+	width: 100%;
+}
+
+ul.menu-tabs li {
+	float: left;
+	list-style: none;
+	padding: 0;
+	position: relative;
+	min-height: 16PX;
+}
+
+.menu-tabs li.activelink {
+	background-color: lavender;
+	font-weight: normal;
+	font-size: 18PX;
+	color: black;
+	border-width: 0PX;
+	border-color: #FFFFFF;
+	border-style: solid;
+	border: none;
+}
+
+.menu-tabs li {
+	background-color: dodgerblue;
+	background-position: left top;
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-image: none;
+	margin: 0PX 0PX 0PX 0PX;
+}
+
+.menu-tabs li a:hover {
+	background-color: lavender;
+	font-weight: normal;
+	font-size: 18PX;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	border-width: 0PX;
+	border-color: #FFFFFF;
+	border-style: solid;
+	border: none;
+}
+
+.menu-tabs li a {
+	display: block;
+	float: left;
+	text-decoration: none;
+	padding: 15PX 15PX 15PX 15PX;
+	line-height: 17PX;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-size: 18PX;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+
+li {
+	display: list-item;
+}
+
+.content-area h1 {
+	color: dodgerblue;
+	font-size: 40px;
+	margin-left: 10%;
+	border-bottom: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: dodgerblue;
+	text-shadow: black;
+}
+
+.text-input {
+	width: 50%;
+	height: 30px;
+	padding: 2px 2px 2px 2px;
+	margin-bottom: 10px;
+	display: block;
+	font-size: 16px;
+}
+
+.text-input-add {
+	height: 30px;
+	padding: 2px 2px 2px 2px;
+	margin-bottom: 10px;
+	display: block;
+	font-size: 14px;
+}
+
+.new-form-div label {
+	font-size: 16px;
+}
+
+.new-form-div, .new-form-div {
+	margin-left: 10%;
+	width: 30%;
+}
+
+
+#add-contact-btn-div, #edit-contact-btn-div {
+	display: inline;
+}
+
+.index-btn {
+	font-size: 16px;
+	height: 30px;
+	margin-left: 5%;
+}
+
+.new-form-div .radio-input {
+	font-size: 30px;
+	margin-left: 30%;
+}
+
+.new-form-div select {
+	font-size: 16px;
+	padding: 5px 5px 5px 5px;
+	width: 70%;
+	height: 50px;
+	margin-left: 5%;
+}
+
+.card {
+	width: 80%;
+	margin-left: 10%;
+}
+
+div #client-info {
+	width: 400px;
+	height: 250px;
+	float: left;
+}
+
+div #cars-info {
+	float: right;
+}
+
+.card div {
+	display: inline;
+}
+
+.content-area {
+	height: 100%;
+	overflow: hidden;
+}
+
+#cars-info {
+	margin-top: 0px;
+}
+
+#client-card-orders-info {
+	height: auto;
+	width: 80%;
+	margin-left: 10%;
+}
+
+/* #div-add-contact-form { */
+/* 	display: none; */
+/* } */
+
+#div-edit-contact-form {
+	display: none;
+}
+
+.phones-block, .emails-block {
+	display: inline;
+}
+
+#add-contact-btn, #close-add-form-btn {
+	margin-top: 5%;
+}
+
+.phones-block, .emails-block{
+	margin-left: 80px;
+}
+.btn-add-new {
+	width: 150px;
+	margin: 10px 10px 10px 10px;
+}
+.delete-input-btn{
+	margin-left: 20px;
+}
+.ui-dialog-titlebar {
+	background: dodgerblue;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-size: 18PX;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+
+.form-control-my {
+    min-width: 0;
+    width: 250px;
+}
