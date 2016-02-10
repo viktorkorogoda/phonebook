@@ -143,13 +143,13 @@
 									<td>${contact.address}</td>
 									<td>
 										<c:forEach items="${contact.phoneList}" var="phone">
-											${phone.type} : ${phone.number} ${phone.isDefault}
+											${phone.type} : ${phone.number}	${phone.isDefault}
 											<br/>
 										</c:forEach>
 									</td>
 									<td>
 										<c:forEach items="${contact.emailList}" var="email">
-											${email.type} : ${email.address} ${email.isDefault}
+											${email.type}	:	${email.address}	${email.isDefault}
 											<br/>
 										</c:forEach>
 									</td>
